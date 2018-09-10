@@ -1,0 +1,10 @@
+/node_modules
+/storage/*.key
+/storage
+/vendor
+/.idea
+/.vagrant
+.env
+
+.DS_Store
+.DS_Store
