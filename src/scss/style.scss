@@ -1,3 +1,12 @@
+// $red-bg: #81011a;
+$red-bg: #9e0000;
+$red-font : $red-bg;
+// $yellow-bg: #f9b109;
+$yellow-bg: #ffc740;
+$yellow-font: $yellow-bg;
+
+
+
 body, html {
   font-family: 'Raleway', sans-serif;
   text-rendering: optimizeLegibility !important;
@@ -10,7 +19,7 @@ body, html {
 
 h2 {
   margin: 0 0 20px 0;
-  font-weight: 500;
+  font-weight: 700;
   font-size: 34px;
   color: #333;
   text-transform: uppercase;
@@ -18,7 +27,7 @@ h2 {
 
 h3 {
   font-size: 22px;
-  font-weight: 500;
+  font-weight: 700;
   color: #333;
 }
 
@@ -86,9 +95,9 @@ hr {
   width: 70px;
   text-align: center;
   position: relative;
-  background: #8eb640;
+  background: $yellow-font;
   margin: 0;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   border: 0;
 }
 
@@ -119,44 +128,98 @@ a:focus {
   padding: 20px;
   transition: all 0.8s;
   &.navbar-default {
-    background-color: rgba(248, 248, 248, 0);
-    border-color: rgba(231, 231, 231, 0);
+    background-color: transparent;
+    background-image: none;
+    border: 0;
+    box-shadow: none;
+    .active>a{
+      background-color: transparent;
+      background-image: none;
+      border: 0;
+    }
+    // background-color: rgba(248, 248, 248, 0);
+    // border-color: rgba(231, 231, 231, 0);
+    .navbar-collapse{
+      text-align: center;
+      border-color: #f9b109;
+      &.in{
+      background: $red-bg;
+      }
+    }
+    .navbar-toggle {
+      border:none;
+      background: $yellow-bg;
+      &:hover{
+        background: #fff;
+        transform: scale(1.1);
+        transition: all 0.5s;
+      }
+      .icon-bar{
+        background-color: $red-bg;
+      }
+    }
+    .scrolllogo{
+      display: none;
+      img{
+        width: 140px;
+        padding-left: 10px;
+        padding-top: 2px;
+      }
+      @media(max-width:768px){
+          display: block;
+      }
+    }
+    &.on{
+      background: $red-bg!important;
+      .scrolllogo{
+        display: block;
+      }
+    }
   }
   a.navbar-brand {
     font-family: 'Dancing Script', cursive;
     font-size: 36px;
-    color: #8eb640;
+    color: $yellow-font;
     font-weight: 700;
     letter-spacing: 1px;
   }
   &.navbar-default .navbar-nav > li > a {
     text-transform: uppercase;
-    color: #ddd;
-    font-weight: 500;
-    font-size: 15px;
+    color: $yellow-font;
+    font-weight: 700;
+    font-size: 18px;
     padding: 5px 0;
-    border: 2px solid transparent;
     letter-spacing: 0.5px;
-    margin: 10px 15px 0 15px;
+    margin: 10px 15px;
+    background: none;
+    box-shadow: none;
     &:hover {
-      color: #8eb640;
+      color: #fff!important;
+      transform: scale(1.1);
+      transition: all 0.5s;
     }
+  }
+  .navbar-center{
+    float: none!important;
+    display: inline-block;
+  }
+  .navbar-header{
+    padding-bottom: 7px;
   }
 }
 
 .on {
   background-color: #262626 !important;
   padding: 0 !important;
-  padding: 10px 0 !important;
+  padding: 10px 0 0px!important;
 }
 
 .navbar-default .navbar-nav > .active > a {
-  color: #8eb640 !important;
+  color: #fff!important;
+  transform: scale(1.1);
+  transition: all 0.5s;
   background-color: transparent;
-  &:hover, &:focus {
-    color: #8eb640 !important;
-    background-color: transparent;
-  }
+
 }
 
 .navbar-toggle {
@@ -213,52 +276,68 @@ a:focus {
 .intro {
   display: table;
   width: 100%;
+  height: 100vh;
   padding: 0;
-  background: url(../img/intro-bg.jpg) no-repeat center center;
+  background: url(../img/header-bg.png) no-repeat center center;
   background-color: #e5e5e5;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
   .overlay {
+    width: 100%;
+    height: 100vh;
     background: rgba(0, 0, 0, 0.4);
   }
   h1 {
     font-family: 'Dancing Script', cursive;
     color: #fff;
-    font-size: 10em;
+    font-size: 10px;
     font-weight: 700;
     margin-top: 0;
     margin-bottom: 10px;
+    text-indent: -999999px;
   }
   span {
     color: #a7c44c;
     font-weight: 600;
   }
   p {
-    color: #fff;
+    color: $yellow-font;
     font-size: 32px;
-    font-weight: 300;
-    margin-top: 10px;
+    font-weight: 700;
+    margin-top: -15px;
+    // text-transform: uppercase;
     margin-bottom: 40px;
+  }
+  .logo{
+    max-width: 400px;
+    width: 100%;
   }
 }
 
 header .intro-text {
-  padding-top: 250px;
-  padding-bottom: 200px;
+  width: 100%;
+  padding: 180px 15px 200px 15px;
   text-align: center;
 }
 
 /* About Section */
 
 #about {
-  padding: 120px 0;
+  padding: 100px 0;
   h3 {
     font-size: 20px;
+    font-weight: bold;
+    color: $red-font;
+
   }
   .about-text {
     margin-left: 10px;
+    h2{
+      color: $red-font;
+      font-weight: bold;
+    }
   }
   .about-img {
     display: inline-block;
@@ -277,6 +356,13 @@ header .intro-text {
   p {
     line-height: 24px;
     margin: 15px 0 30px;
+    font-weight: 400;
+  }
+  @media(max-width: 992px){
+    padding: 50px 0;
+    .about-text {
+      margin-top: 20px;
+    }
   }
 }
 
@@ -288,7 +374,19 @@ header .intro-text {
     background: #444 url(../img/menu-bg.jpg) center center no-repeat fixed;
     background-size: cover;
     h2 {
-      color: #fff;
+      color: $yellow-font;
+    }
+    hr{
+      background: #fff;
+      margin-top: 40px;
+    }
+    p{
+      padding: 0 15px;
+      font-weight: 500;
+      @media(max-width:768px){
+        font-size: 18px!important;
+      }
+      color: $yellow-font;
     }
   }
   img {
@@ -308,10 +406,13 @@ header .intro-text {
   .menu-section-title {
     font-size: 26px;
     display: block;
-    font-weight: 500;
-    color: #444;
+    font-weight: 700;
+    color: $red-font;
     margin: 20px 0;
     text-align: center;
+    p{
+      font-weight: 400;
+    }
   }
   .menu-item {
     margin: 35px 0;
@@ -343,8 +444,15 @@ header .intro-text {
     background: #444 url(../img/gallery-bg.jpg) center center no-repeat fixed;
     background-size: cover;
     margin-bottom: 50px;
-    h2 {
-      color: #fff;
+    hr{
+      background: #fff;
+      margin-top: 40px;
+    }
+    h2,p {
+      color: $yellow-font;
+    }
+    p{
+      font-weight: 500;
     }
   }
 }
@@ -363,19 +471,23 @@ ol.type li {
   margin: 0 10px;
   padding: 20px 0;
   a {
-    color: #999;
-    font-weight: 500;
-    font-size: 14px;
-    padding: 12px 24px;
+    color: $red-font;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 14px 28px;
     background: #eee;
     border: 0;
     border-radius: 0;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     &.active, &:hover {
-      color: #fff;
-      background-color: #8eb640;
+      color: $yellow-font;
+      background-color: $red-bg;
     }
+  }
+  &:hover{
+    transform: scale(1.1);
+    transition: all 0.8s;
   }
 }
 
@@ -484,10 +596,11 @@ ol.type li {
     background: rgba(0, 0, 0, 0.6);
   }
   h2, p {
-    color: #fff;
+    color: $yellow-font;
   }
   hr {
     background: #fff;
+    margin-top: 40px;
   }
   h3 {
     color: #fff;
@@ -689,5 +802,13 @@ label {
     &:hover {
       color: #333;
     }
+  }
+}
+@media(max-width:768px){
+  h2{
+    font-size: 28px!important;
+  }
+  h3{
+    font-size: 24px!important;
   }
 }

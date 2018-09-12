@@ -12,7 +12,7 @@ const imagemin = require('gulp-imagemin');
 
 
 gulp.task('sass', () => gulp
-    .src(['./src/css/bootstrap.min.css', './src/css/bootstrap-grid.min.css', './src/css/bootstrap-reboot.min.css', './src/css/nivo-lightbox/default.css', './src/css/nivo-lightbox/nivo-lightbox.css', './src/scss/style.scss' ])
+    .src(['./src/css/bootstrap.min.css', './src/css/bootstrap-theme.min.css', './src/css/nivo-lightbox/default.css', './src/css/nivo-lightbox/nivo-lightbox.css', './src/scss/style.scss' ])
     .pipe(concat('style.css'))
     .pipe(sass({ outputStyle: 'expanded', errLogToConsole: true }).on('error', sass.logError))
     .pipe(sourcemaps.init())
@@ -22,14 +22,8 @@ gulp.task('sass', () => gulp
     .pipe(browserSync.stream())
 );
 
-gulp.task('default', () =>
-    gulp.src('src/images/*')
-        .pipe(imagemin())
-        .pipe(gulp.dest('dist/images'))
-);
-
 gulp.task('babel', () => gulp
-    .src(['./src/js/jquery.js', './src/js/bootstrap.bundle.min.js', './src/js/bootstrap.min.js','./src/js/jqBootstrapValidation.js','./src/js/jquery.isotope.js','./src/js/nivo-lightbox.js','./src/js/contact_me.js','./src/js/nivo-lightbox.js','./src/js/SmoothScroll.js','./src/js/main.js'])
+    .src(['./src/js/jquery.js', './src/js/bootstrap.min.js','./src/js/jqBootstrapValidation.js','./src/js/jquery.isotope.js','./src/js/nivo-lightbox.js','./src/js/contact_me.js','./src/js/nivo-lightbox.js','./src/js/SmoothScroll.js','./src/js/main.js'])
     .pipe(concat('main.js'))
     .pipe(babel({
         presets: ['es2015'],
@@ -38,6 +32,13 @@ gulp.task('babel', () => gulp
     .pipe(gulp.dest('./dist/js'))
     .pipe(browserSync.stream())
 );
+
+gulp.task('imagemin', () =>
+    gulp.src('src/img/**/*')
+        .pipe(imagemin())
+        .pipe(gulp.dest('dist/img/'))
+);
+
 gulp.task('fontawesome', () => gulp
     .src(['./src/fontawesome/**/**/**'])
     .pipe(gulp.dest('./dist/fontawesome/'))
@@ -55,5 +56,5 @@ gulp.watch('./src/js/main.js', ['babel'])
 gulp.watch('./*.html').on('change', browserSync.reload);
 });
 
-gulp.task('default', ['serve']);
-gulp.task('build', ['sass', 'babel', 'fontawesome']);
+gulp.task('default', ['sass','serve']);
+gulp.task('build', ['sass', 'babel', 'fontawesome', 'imagemin']);
