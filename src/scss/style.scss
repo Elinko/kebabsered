@@ -642,31 +642,24 @@ ol.type li {
 /* Call Reservation Section */
 
 #call-reservation {
-  padding: 90px 0;
-  color: #fff;
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#8eb640+50,779936+100 */
-  background: rgb(142, 182, 64);
-  /* Old browsers */
-  background: -moz-linear-gradient(top, rgba(142, 182, 64, 1) 50%, rgba(119, 153, 54, 1) 100%);
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, rgba(142, 182, 64, 1) 50%, rgba(119, 153, 54, 1) 100%);
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, rgba(142, 182, 64, 1) 50%, rgba(119, 153, 54, 1) 100%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8eb640', endColorstr='#779936', GradientType=0 );
-  /* IE6-9 */
+  padding: 70px 0 90px;
+  color: $red-font;
+  background: $yellow-bg;
   .overlay {
     padding: 80px 0;
     background: #8eb640;
   }
   h2 {
+    padding-top: 20px;
     font-family: 'Open Sans', sans-serif;
-    color: #fff;
+    color: $red-font;
+
     font-weight: 400;
     margin: 0;
   }
   hr {
-    background: #fff;
+    background: $red-font;
+    margin: 20px auto 0;
   }
   h3 {
     color: #fff;
@@ -679,88 +672,62 @@ ol.type li {
 /* Contact Section */
 
 #contact {
-  padding: 100px 0 60px 0;
+  padding: 60px 0 60px 0;
   background: #F6F6F6;
-  .section-title p {
-    color: #777;
-  }
-  form {
-    padding: 0;
-  }
   h3 {
     text-transform: uppercase;
     font-size: 20px;
     font-weight: 400;
     color: #555;
   }
-  .text-danger {
-    color: #cc0033;
-    text-align: left;
+  p{
+    color: #555;
+    font-size: 20px;
+    font-weight: 500;
   }
+  hr{
+    margin: 20px auto 20px;
+    color: $red-font;
+  }
+
 }
 
-label {
-  font-size: 12px;
-  font-weight: 400;
-  font-family: 'Open Sans', sans-serif;
-  float: left;
-}
-
-#contact .form-control {
-  display: block;
-  width: 100%;
-  padding: 6px 12px;
-  font-size: 16px;
-  line-height: 1.42857143;
-  color: #444;
-  background-color: #fff;
-  background-image: none;
-  border: 1px solid #ddd;
-  border-radius: 0;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  -webkit-transition: none;
-  -o-transition: none;
-  transition: none;
-  &:focus {
-    border-color: #999;
-    outline: 0;
-    -webkit-box-shadow: transparent;
-    box-shadow: transparent;
-  }
-}
-
-.form-control {
-  &::-webkit-input-placeholder, &:-moz-placeholder, &::-moz-placeholder, &:-ms-input-placeholder {
-    color: #777;
-  }
-}
-
-#contact .contact-item {
-  margin: 20px 0 40px 0;
-  span {
-    font-weight: 400;
-    color: #aaa;
-    text-transform: uppercase;
-    margin-bottom: 6px;
-    display: inline-block;
-  }
-  p {
-    font-size: 16px;
-  }
-}
 
 /* Footer Section*/
 
 #footer {
-  background: #262626;
-  padding: 50px 0 0 0;
-  h3 {
-    color: #8eb640;
-    font-weight: 400;
-    font-size: 18px;
-    text-transform: uppercase;
-    margin-bottom: 20px;
+  background: #f6f6f6;
+  padding: 0 0 60px;
+  .section-title{
+    background:  #444 url('../img/gallery-bg.jpg') 50% no-repeat fixed;
+    h2{
+      color: $yellow-font;
+    }
+    hr{
+      margin: 40px auto;
+      color: #fff;
+    }
+    h3 {
+      color: $yellow-font;
+      font-weight: 400;
+      font-size: 18px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    p{
+      font-size: 22px;
+      color: $yellow-font;
+    }
+  }
+  h3{
+    color: $red-font;
+  }
+  .adress{
+    p{
+      color: #555;
+      font-weight: 500;
+      font-size: 18px;
+    }
   }
   .copyrights {
     padding: 20px 0;
@@ -802,6 +769,9 @@ label {
     &:hover {
       color: #333;
     }
+  }
+  .map{
+
   }
 }
 @media(max-width:768px){
