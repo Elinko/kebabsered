@@ -75,19 +75,59 @@ function main() {
             effect: 'slideDown',
             keyboardNav: true,
      });
-     $('.intro-text img').css({
-        transition: 'all 3s ease-in-out',
-        transform:  'scale(1.1)'
-      }, 500).css({
-         transition: 'all 1s ease-in-out',
-         transform:  'scale(0.9)'
-       });
+
 
     setTimeout(function(){
+      $('.intro-text img').css({
+         transition: 'all .7s ease-in-out',
+         transform:  'scale(1.1)'
+       });
+    }, 500);
+    setTimeout(function(){
+       $('.intro-text img').css({
+          transition: 'all .7s ease-in-out',
+          transform:  'scale(1)'
+       });
+    }, 1200);
 
-    }, 1000);
 
+    // fade effects
+    $ (window) .scroll (function () {
+      $ ('.animation-scroll'). each (function () {
+        var elPosition = $ (this) .offset (). top; 	// Position of the element
+        var elHeight = $ (this) .height (); 		// Height of the element
+        var windowTop = $ (window) .scrollTop (); 	// Top of the window
+        var windowHeight = $ (window) .height (); 	// Height of the window
+        if (elPosition < windowTop + windowHeight - elHeight) {
+          $(this).addClass ("animation fade-in-up");
+        } 						                   // adds the class wheh the element is fully in the visible area of the window
+        if (elPosition > windowTop + windowHeight) {
+          $(this).removeClass ("animation fade-in-up");
+        } 						                   // removes the class when the element is not visible in the window
+        if (elPosition + elHeight < windowTop) {
+          $(this).removeClass ("animation fade-in-up");
+        } 						                   // removes the class when the element is not visible in the window
+      });
+      $('.menu-item, .menu-section-title, .myhr').each (function () {
+        var elPosition = $ (this) .offset (). top; 	// Position of the element
+        var elHeight = $ (this) .height (); 		// Height of the element
+        var windowTop = $ (window) .scrollTop (); 	// Top of the window
+        var windowHeight = $ (window) .height (); 	// Height of the window
+        if (elPosition < windowTop + windowHeight - elHeight) {
+          $(this).addClass ("animation fade-in-up");
+        }
+      });
+      $ ('.menu-section-title'). each (function () {
+        var elPosition = $ (this) .offset (). top; 	// Position of the element
+        var elHeight = $ (this) .height (); 		// Height of the element
+        var windowTop = $ (window) .scrollTop (); 	// Top of the window
+        var windowHeight = $ (window) .height (); 	// Height of the window
+        if (elPosition < windowTop + windowHeight - elHeight) {
+          $(this).addClass ("animation fade-in-up");
+        }
+      });
 
+    });
 
 
 
