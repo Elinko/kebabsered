@@ -19,9 +19,9 @@ function main() {
 
 
     // Show Menu on Book
-    $(window).bind('scroll', function() {
-        var navHeight = $(window).height() - 500;
-        if ($(window).scrollTop() > navHeight) {
+    $(window).on('scroll', function() {
+        var navHeight = $(window).height() - 600;
+        if ($(window).scrollTop() > 20) {
             $('.navbar-default').addClass('on');
         } else {
             $('.navbar-default').removeClass('on');
@@ -93,22 +93,7 @@ function main() {
 
     // fade effects
     $ (window) .scroll (function () {
-      $ ('.animation-scroll'). each (function () {
-        var elPosition = $ (this) .offset (). top; 	// Position of the element
-        var elHeight = $ (this) .height (); 		// Height of the element
-        var windowTop = $ (window) .scrollTop (); 	// Top of the window
-        var windowHeight = $ (window) .height (); 	// Height of the window
-        if (elPosition < windowTop + windowHeight - elHeight) {
-          $(this).addClass ("animation fade-in-up");
-        } 						                   // adds the class wheh the element is fully in the visible area of the window
-        if (elPosition > windowTop + windowHeight) {
-          $(this).removeClass ("animation fade-in-up");
-        } 						                   // removes the class when the element is not visible in the window
-        if (elPosition + elHeight < windowTop) {
-          $(this).removeClass ("animation fade-in-up");
-        } 						                   // removes the class when the element is not visible in the window
-      });
-      $('.menu-item, .menu-section-title, .myhr').each (function () {
+      $('.animation-scroll, .menu-item, .menu-section-title, .myhr').each (function () {
         var elPosition = $ (this) .offset (). top; 	// Position of the element
         var elHeight = $ (this) .height (); 		// Height of the element
         var windowTop = $ (window) .scrollTop (); 	// Top of the window
@@ -117,20 +102,36 @@ function main() {
           $(this).addClass ("animation fade-in-up");
         }
       });
-      $ ('.menu-section-title'). each (function () {
+      $('.thumbnail').each (function () {
+        var elPosition = $ (this) .offset (). top; 	// Position of the element
+        var elHeight = $ (this) .height (); 		// Height of the element
+        var windowTop = $ (window) .scrollTop (); 	// Top of the window
+        var windowHeight = $ (window) .height (); 	// Height of the window
+        if (elPosition < windowTop + windowHeight - 200) {
+          $(this).addClass ("animation fade-in-up");
+        }
+      });
+      $('#call-reservation .container').each (function () {
         var elPosition = $ (this) .offset (). top; 	// Position of the element
         var elHeight = $ (this) .height (); 		// Height of the element
         var windowTop = $ (window) .scrollTop (); 	// Top of the window
         var windowHeight = $ (window) .height (); 	// Height of the window
         if (elPosition < windowTop + windowHeight - elHeight) {
-          $(this).addClass ("animation fade-in-up");
+          $(this).addClass ("animation slide-in-right");
+        }
+      });
+
+      $(' .section-title h2, .section-title hr,  .section-title p').each (function () {
+        var elPosition = $ (this) .offset (). top; 	// Position of the element
+        var elHeight = $ (this) .height (); 		// Height of the element
+        var windowTop = $ (window) .scrollTop (); 	// Top of the window
+        var windowHeight = $ (window) .height (); 	// Height of the window
+        if (elPosition < windowTop + windowHeight - elHeight) {
+          $(this).addClass ("animation slide-in-left");
         }
       });
 
     });
-
-
-
 }());
 
 

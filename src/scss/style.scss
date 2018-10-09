@@ -5,10 +5,6 @@ $red-font : $red-bg;
 $yellow-bg: #ffc740;
 $yellow-font: $yellow-bg;
 
-.animation-scroll, .menu-item, .myhr{
-  visibility: hidden;
-}
-
 body, html {
   font-family: 'Raleway', sans-serif;
   text-rendering: optimizeLegibility !important;
@@ -242,6 +238,9 @@ a:focus {
 .section-title {
   margin-bottom: 70px;
   .overlay {
+    .overlay-content{
+      visibility: hidden;
+    }
     padding: 80px 0;
     background: rgba(0, 0, 0, 0.7);
   }
@@ -321,10 +320,16 @@ a:focus {
 
 header .intro-text {
   width: 100%;
-  padding: 180px 15px 200px 15px;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
   text-align: center;
+  height: 100vh;
+  padding-top: 100px;
   img{
-    max-width: 100%;
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
   }
 }
 
@@ -410,6 +415,7 @@ header .intro-text {
     margin: 0 20px 80px;
   }
   .menu-section-title {
+    visibility: hidden;
     font-size: 26px;
     display: block;
     font-weight: 700;
@@ -619,6 +625,7 @@ ol.type li {
   }
   .thumbnail {
     background: transparent;
+    visibility: hidden;
     border: 0;
     .team-img {
       display: inline-block;
@@ -654,6 +661,9 @@ ol.type li {
   .overlay {
     padding: 80px 0;
     background: #8eb640;
+  }
+  .container{
+    visibility: hidden;
   }
   h2 {
     padding-top: 20px;
@@ -780,11 +790,22 @@ ol.type li {
 
   }
 }
+.animation-scroll, .menu-item, .myhr{
+  visibility: hidden;
+}
 @media(max-width:768px){
   h2{
     font-size: 28px!important;
   }
   h3{
     font-size: 24px!important;
+  }
+  header .intro-text {
+    img{
+      width: 80%;
+    }
+  }
+  #restaurant-menu .menu-section{
+    margin-bottom: 35px;
   }
 }
