@@ -57,5 +57,5 @@ gulp.watch('./src/js/main.js', ['babel'])
 gulp.watch('./*.html').on('change', browserSync.reload);
 });
 
-gulp.task('default', ['sass','serve']);
+gulp.task('default', ['sass','serve', 'babel']);
 gulp.task('build', ['sass', 'babel', 'fontawesome', 'imagemin']);

@@ -2297,9 +2297,9 @@ function main() {
         });
 
         // Show Menu on Book
-        $(window).bind('scroll', function () {
-            var navHeight = $(window).height() - 500;
-            if ($(window).scrollTop() > navHeight) {
+        $(window).on('scroll', function () {
+            var navHeight = $(window).height() - 600;
+            if ($(window).scrollTop() > 20) {
                 $('.navbar-default').addClass('on');
             } else {
                 $('.navbar-default').removeClass('on');
@@ -2347,7 +2347,6 @@ function main() {
             });
         });
 
-        // Nivo Lightbox
         // Nivo Lightbox
         $('.portfolio-item a').nivoLightbox({
             effect: 'slideDown',

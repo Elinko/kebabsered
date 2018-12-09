@@ -13,46 +13,56 @@
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="profile" href="http://gmpg.org/xfn/11">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
+<link rel="shortcut icon" href="dist/img/favicon.png" type="image/x-icon">
+
+<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory');?>/dist/fontawesome//css/all.css">
+<link rel="stylesheet" type="text/css"  href="<?php bloginfo('stylesheet_directory');?>/dist/css/style.css?v1.11">
+<link rel="stylesheet" type="text/css"  href="<?php bloginfo('stylesheet_directory');?>/dist/css/motion.min.css">
+
+<link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Dancing+Script:400,700" rel="stylesheet">
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'theme' ); ?></a>
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$theme_description = get_bloginfo( 'description', 'display' );
-			if ( $theme_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $theme_description; /* WPCS: xss ok. */ ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
+<nav id="menu" class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'theme' ); ?></button>
-			<?php
-			wp_nav_menu( array(
-				'theme_location' => 'menu-1',
-				'menu_id'        => 'primary-menu',
-			) );
-			?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      <a class="scrolllogo" href="#page-top"><img src="<?php bloginfo('stylesheet_directory');?>/dist/img/logo2.png" class="logo" alt=""></a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-center fade-in-down">
+        <li><a href="#about" class="page-scroll ">O nás</a></li>
+        <li><a href="#restaurant-menu" class="page-scroll">Menu</a></li>
+        <li><a href="#portfolio" class="page-scroll">Galéria</a></li>
+        <li><a href="#team" class="page-scroll">Kolegovia</a></li>
+        <li><a href="#call-reservation" class="page-scroll">Donáška</a></li>
+        <li><a href="#contact2" class="page-scroll">Kontakt</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<header id="header">
+  <div class="intro">
+    <div class="overlay">
+      <div class="container">
+        <div class="row">
+          <div class="intro-text">
+            <img src="<?php bloginfo('stylesheet_directory');?>/dist/img/logo.png" class="delay-03s animation scale-in" alt="">
+            <h1>Kebab Sereď - Mexico</h1>
+            <p class="delay-1s animation fade-in-up">Kebab / Bagety / Zapekačky</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
 
 	<div id="content" class="site-content">
