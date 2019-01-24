@@ -70,7 +70,7 @@
 <script type="text/javascript" src="<?php bloginfo('stylesheet_directory');?>/js/contact_me.js"></script>
 <script type="text/javascript" src="<?php bloginfo('stylesheet_directory');?>/js/main.js"></script> -->
 
-<?php wp_footer(); ?>
+<?php //wp_footer(); ?>
 
 </body>
 </html>

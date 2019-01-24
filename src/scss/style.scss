@@ -544,22 +544,33 @@ ol.type li {
     transition-property: transform, opacity;
   }
 }
-
-.portfolio-item {
-  margin: 15px 0;
-  .hover-bg {
-    overflow: hidden;
-    position: relative;
-    &:before {
-      display: block;
-      content: '';
-      position: absolute;
-      top: 6px;
-      right: 6px;
-      bottom: 6px;
-      left: 6px;
-      border: 1px solid rgba(255, 255, 255, 0.6);
+.portfolio-items{
+  .portfolio-item {
+    margin: 15px 0;
+    .hover-bg {
+      overflow: hidden;
+      position: relative;
+      &:before {
+        display: block;
+        content: '';
+        position: absolute;
+        top: 6px;
+        right: 6px;
+        bottom: 6px;
+        left: 6px;
+        border: 1px solid rgba(255, 255, 255, 0.6);
+      }
+      img{
+        // max-width: inherit;
+        // width: 100%;
+      }
     }
+  }
+  @media(max-width: 673px){
+      width: 100%;
+      .portfolio-item {
+        width: 100%;
+      }
   }
 }
 

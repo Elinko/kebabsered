@@ -177,27 +177,13 @@ get_header();
 			</div>
 			<!-- Portfolio Section -->
 			<?php
-			/**
-			* Setup query to show the ‘services’ post type with ‘8’ posts.
-			* Output is title with excerpt.
-			*/
 			   $args = array(
 			       'post_type' => 'galeria',
 			       ‘order’ => ‘ASC’,
 			   );
-
 			   $loop = new WP_Query( $args );
-
-			   while ( $loop->have_posts() ) : $loop->the_post();
-				 	$images = get_field('galeria');
-					$image= $images[0];
-						echo'<img src="'.$image['sizes']['thumbnail'].'" alt="'.$image['alt'].'" />';
-					var_dump($image);
-					echo $image["sizes"]["thumbnail"];
-			   endwhile;
-
-			   wp_reset_postdata();
 			?>
+
 			<div id="portfolio">
 			  <div class="section-title text-center center">
 			    <div class="overlay">
@@ -215,10 +201,14 @@ get_header();
 			        <ul class="cat">
 			          <li>
 			            <ol class="type">
-			              <li><a href="" data-filter="*" class="active">Všetko</a></li>
-			              <li><a href="" data-filter=".breakfast">Predajňa</a></li>
-			              <li><a href="" data-filter=".lunch">Jedlá</a></li>
-			              <li><a href="" data-filter=".dinner">Nápoje</a></li>
+										<li><a href="" data-filter="*" class="active">Všetko</a></li>
+										<?php
+											 $first = 0;
+											 while ( $loop->have_posts() ) : $loop->the_post();
+ 										 		 echo'<li><a href="" data-filter=".tab'.$first.'">'.get_the_title().'</a></li>';
+												 $first++;
+											 endwhile;
+										?>
 			            </ol>
 			          </li>
 			        </ul>
@@ -227,114 +217,42 @@ get_header();
 			    </div>
 			    <div class="">
 			      <div class="portfolio-items row">
-			        <div class="col-sm-6 col-md-4 col-lg-4 breakfast">
+							<?php
+								 while ( $loop->have_posts() ) : $loop->the_post();
+							 		$images = get_field('galeria');
+								 	for ($i=0; $i < sizeOf($images); $i++) {
+										 // var_dump($images[$i]);
+										 echo'<div class="col-12 col-sm-6 col-md-4 col-lg-4 portfolio-items tab'.$i.'">
+													 <div class="portfolio-item">
+														 <div class="hover-bg">
+														 	<a href="'.$images[$i]['sizes']['full'].'title="'.$images[$i]['title'].'" data-lightbox-gallery="gallery1">';
+													echo'<div class="hover-text">';
+														echo'<h4>'.$images[$i]['title'].'</h4>
+															</div>';
+													echo'<img src="'.$images[$i]['sizes']['large'].'" alt="'.$images[$i]['title'].'" />';
+													echo'</a>
+														 </div>
+													 </div>
+												 </div>';
+								 	}
+								 endwhile;
+
+								 wp_reset_postdata();
+							?>
+
+			        <!-- <div class="col-sm-6 col-md-4 col-lg-4 breakfast">
 			          <div class="portfolio-item">
-			            <div class="hover-bg"> <a href="img/portfolio/01-large.jpg" title="Dish Name" data-lightbox-gallery="gallery1">
-			              <div class="hover-text">
-			                <h4>Dish Name</h4>
-			              </div>
-			              <img src="img/portfolio/01-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
+			            <div class="hover-bg">
+										<a href="img/portfolio/01-large.jpg" title="Dish Name" data-lightbox-gallery="gallery1">
+				              <div class="hover-text">
+				                <h4>Dish Name</h4>
+				              </div>
+				              <img src="img/portfolio/01-small.jpg" class="img-responsive" alt="Project Title">
+										</a>
+									</div>
 			          </div>
-			        </div>
-			        <div class="col-sm-6 col-md-4 col-lg-4 dinner">
-			          <div class="portfolio-item">
-			            <div class="hover-bg"> <a href="img/portfolio/02-large.jpg" title="Dish Name" data-lightbox-gallery="gallery1">
-			              <div class="hover-text">
-			                <h4>Dish Name</h4>
-			              </div>
-			              <img src="img/portfolio/02-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
-			          </div>
-			        </div>
-			        <div class="col-sm-6 col-md-4 col-lg-4 breakfast">
-			          <div class="portfolio-item">
-			            <div class="hover-bg"> <a href="img/portfolio/03-large.jpg" title="Dish Name" data-lightbox-gallery="gallery1">
-			              <div class="hover-text">
-			                <h4>Dish Name</h4>
-			              </div>
-			              <img src="img/portfolio/03-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
-			          </div>
-			        </div>
-			        <div class="col-sm-6 col-md-4 col-lg-4 breakfast">
-			          <div class="portfolio-item">
-			            <div class="hover-bg"> <a href="img/portfolio/04-large.jpg" title="Dish Name" data-lightbox-gallery="gallery1">
-			              <div class="hover-text">
-			                <h4>Dish Name</h4>
-			              </div>
-			              <img src="img/portfolio/04-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
-			          </div>
-			        </div>
-			        <div class="col-sm-6 col-md-4 col-lg-4 dinner">
-			          <div class="portfolio-item">
-			            <div class="hover-bg"> <a href="img/portfolio/05-large.jpg" title="Dish Name" data-lightbox-gallery="gallery1">
-			              <div class="hover-text">
-			                <h4>Dish Name</h4>
-			              </div>
-			              <img src="img/portfolio/05-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
-			          </div>
-			        </div>
-			        <div class="col-sm-6 col-md-4 col-lg-4 lunch">
-			          <div class="portfolio-item">
-			            <div class="hover-bg"> <a href="img/portfolio/06-large.jpg" title="Dish Name" data-lightbox-gallery="gallery1">
-			              <div class="hover-text">
-			                <h4>Dish Name</h4>
-			              </div>
-			              <img src="img/portfolio/06-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
-			          </div>
-			        </div>
-			        <div class="col-sm-6 col-md-4 col-lg-4 lunch">
-			          <div class="portfolio-item">
-			            <div class="hover-bg"> <a href="img/portfolio/07-large.jpg" title="Dish Name" data-lightbox-gallery="gallery1">
-			              <div class="hover-text">
-			                <h4>Dish Name</h4>
-			              </div>
-			              <img src="img/portfolio/07-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
-			          </div>
-			        </div>
-			        <div class="col-sm-6 col-md-4 col-lg-4 breakfast">
-			          <div class="portfolio-item">
-			            <div class="hover-bg"> <a href="img/portfolio/08-large.jpg" title="Dish Name" data-lightbox-gallery="gallery1">
-			              <div class="hover-text">
-			                <h4>Dish Name</h4>
-			              </div>
-			              <img src="img/portfolio/08-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
-			          </div>
-			        </div>
-			        <div class="col-sm-6 col-md-4 col-lg-4 dinner">
-			          <div class="portfolio-item">
-			            <div class="hover-bg"> <a href="img/portfolio/09-large.jpg" title="Dish Name" data-lightbox-gallery="gallery1">
-			              <div class="hover-text">
-			                <h4>Dish Name</h4>
-			              </div>
-			              <img src="img/portfolio/09-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
-			          </div>
-			        </div>
-			        <div class="col-sm-6 col-md-4 col-lg-4 lunch">
-			          <div class="portfolio-item">
-			            <div class="hover-bg"> <a href="img/portfolio/10-large.jpg" title="Dish Name" data-lightbox-gallery="gallery1">
-			              <div class="hover-text">
-			                <h4>Dish Name</h4>
-			              </div>
-			              <img src="img/portfolio/10-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
-			          </div>
-			        </div>
-			        <div class="col-sm-6 col-md-4 col-lg-4 lunch">
-			          <div class="portfolio-item">
-			            <div class="hover-bg"> <a href="img/portfolio/11-large.jpg" title="Dish Name" data-lightbox-gallery="gallery1">
-			              <div class="hover-text">
-			                <h4>Dish Name</h4>
-			              </div>
-			              <img src="img/portfolio/11-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
-			          </div>
-			        </div>
-			        <div class="col-sm-6 col-md-4 col-lg-4 breakfast">
-			          <div class="portfolio-item">
-			            <div class="hover-bg"> <a href="img/portfolio/12-large.jpg" title="Dish Name" data-lightbox-gallery="gallery1">
-			              <div class="hover-text">
-			                <h4>Dish Name</h4>
-			              </div>
-			              <img src="img/portfolio/12-small.jpg" class="img-responsive" alt="Project Title"> </a> </div>
-			          </div>
-			        </div>
+			        </div> -->
+
 			      </div>
 			    </div>
 			  </div>

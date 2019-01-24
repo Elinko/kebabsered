@@ -4,7 +4,7 @@
 // Licensed under the terms of the MIT license.
 
 // People involved
-//  - Balazs Galambosi (maintainer)  
+//  - Balazs Galambosi (maintainer)
 //  - Michael Herf     (Pulse Algorithm)
 
 (function () {
@@ -104,14 +104,14 @@
         }
 
         /**
-         * This fixes a bug where the areas left and right to 
+         * This fixes a bug where the areas left and right to
          * the content does not trigger the onmousewheel event
          * on some pages. e.g.: html, body { height: 100% }
          */
         else if (scrollHeight > windowHeight && (body.offsetHeight <= windowHeight || html.offsetHeight <= windowHeight)) {
 
                 html.style.height = 'auto';
-                setTimeout(refresh, 10);
+                // setTimeout(refresh, 10);
 
                 // clearfix
                 if (root.offsetHeight <= windowHeight) {
@@ -129,7 +129,7 @@
     }
 
     /************************************************
-     * SCROLLING 
+     * SCROLLING
      ************************************************/
 
     var que = [];
@@ -255,7 +255,7 @@
         var overflowing = overflowingAncestor(target);
 
         // use default if there's no overflowing
-        // element or default action is prevented    
+        // element or default action is prevented
         if (!overflowing || event.defaultPrevented || isNodeName(activeElement, "embed") || isNodeName(target, "embed") && /\.pdf/i.test(target.src)) {
             return true;
         }
@@ -506,6 +506,7 @@
         addEvent("load", init);
     };
 })();
+
 /*
  * Nivo Lightbox v1.2.0
  * http://dev7studios.com/nivo-lightbox
