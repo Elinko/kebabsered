@@ -8,6 +8,8 @@
  *
  * @package theme
  */
+ $kontakt_popis = get_field('kontakt_popis',35);
+ $kontakt_text = get_field('kontakt_text', 35);
 
 ?>
 
@@ -19,7 +21,7 @@
 	      <div class="overlay-content">
 	        <h2>Kontakt</h2>
 	        <hr>
-	        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed.</p>
+	        <p><?php echo $kontakt_popis; ?></p>
 	      </div>
 
 	    </div>
@@ -27,23 +29,7 @@
 	  <div class="container text-center">
 	    <div class="col-md-6">
 	      <div class="adress">
-	        <h3>Naša adresa</h3>
-	        <div class="contact-item">
-	          <p>926 01 Sereď <br>
-	            SNP 11/98
-	          </p>
-	        </div>
-	        <h3>Telefónne čísla</h3>
-	        <div class="contact-item">
-	          <p>0915 365 159 <br>
-	          0917 427 905
-	          </p>
-	        </div>
-	        <h3>Otváracia doba</h3>
-	        <div class="contact-item">
-	          <p>PO - ŠTV: 09:00 - 20:00</p>
-	          <p>PIA - SO: 09:00 - 22:00</p>
-	        </div>
+	        <?php echo $kontakt_text; ?>
 	      </div>
 	    </div>
 	    <div class="col-md-6">
