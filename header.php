@@ -13,10 +13,19 @@
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="description" content="Kebab Sereď, v Mexico je najlepší kebab, bagety a zapekačky v Seredi.">
+<meta name="keywords" content="Kebab Sereď, Mexico Sereď, Sereď bagety, Sereď zapekačky, donáška sereď, donáška kebabu">
+<meta name="author" content="Patrik Eliáš">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="shortcut icon" href="dist/img/favicon.png" type="image/x-icon">
+<meta property="og:url" content="http://www.kebabsered.sk" />
+<meta property="og:type" content="Web page" />
+<meta property="og:title" content="Kebab Sereď - Mexico, kebab bagety zapekačky" />
+<meta property="og:description" content="Kebab Sereď, v Mexico je najlepší kebab, bagety a zapekačky v Seredi." />
+<meta property="og:image" content="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg" />
+
+<link rel="shortcut icon" href="<?php bloginfo('stylesheet_directory');?>/dist/img/favicon.png" type="image/x-icon">
 
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory');?>/dist/fontawesome//css/all.css">
 <link rel="stylesheet" type="text/css"  href="<?php bloginfo('stylesheet_directory');?>/dist/css/style.css?v1.11">
@@ -35,7 +44,7 @@
 
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-      <a class="scrolllogo" href="#page-top"><img src="<?php bloginfo('stylesheet_directory');?>/dist/img/logo2.png" class="logo" alt=""></a>
+      <a class="scrolllogo" href="<?php echo get_home_url(); ?>"><img src="<?php bloginfo('stylesheet_directory');?>/dist/img/logo2.png" class="logo" alt=""></a>
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -45,7 +54,7 @@
         <li><a href="#portfolio" class="page-scroll">Galéria</a></li>
         <li><a href="#team" class="page-scroll">Kolegovia</a></li>
         <li><a href="#call-reservation" class="page-scroll">Donáška</a></li>
-        <li><a href="#contact2" class="page-scroll">Kontakt</a></li>
+        <li><a href="#footer" class="page-scroll">Kontakt</a></li>
       </ul>
     </div>
   </div>

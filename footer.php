@@ -8,8 +8,8 @@
  *
  * @package theme
  */
- $kontakt_popis = get_field('kontakt_popis',35);
- $kontakt_text = get_field('kontakt_text', 35);
+ $kontakt_popis = get_field('kontakt_popis',7);
+ $kontakt_text = get_field('kontakt_text', 7);
 
 ?>
 
@@ -42,21 +42,7 @@
 	</footer>
 </div><!-- #page -->
 
-<script type="text/javascript" src="<?php bloginfo('stylesheet_directory');?>/js/jquery.1.11.1.js"></script>
-<script type="text/javascript" src="<?php bloginfo('stylesheet_directory');?>/js/bootstrap.js"></script>
 <script type="text/javascript" src="<?php bloginfo('stylesheet_directory');?>/dist/js/main.js?1.13"></script>
-
-
-<!-- <script type="text/javascript" src="<?php bloginfo('stylesheet_directory');?>/js/jquery.1.11.1.js"></script>
-<script type="text/javascript" src="<?php bloginfo('stylesheet_directory');?>/js/bootstrap.js"></script>
-<script type="text/javascript" src="<?php bloginfo('stylesheet_directory');?>/js/SmoothScroll.js"></script>
-<script type="text/javascript" src="<?php bloginfo('stylesheet_directory');?>/js/nivo-lightbox.js"></script>
-<script type="text/javascript" src="<?php bloginfo('stylesheet_directory');?>/js/jquery.isotope.js"></script>
-<script type="text/javascript" src="<?php bloginfo('stylesheet_directory');?>/js/jqBootstrapValidation.js"></script>
-<script type="text/javascript" src="<?php bloginfo('stylesheet_directory');?>/js/contact_me.js"></script>
-<script type="text/javascript" src="<?php bloginfo('stylesheet_directory');?>/js/main.js"></script> -->
-
-<?php //wp_footer(); ?>
 
 </body>
 </html>

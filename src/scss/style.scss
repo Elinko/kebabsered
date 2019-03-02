@@ -16,6 +16,9 @@ body, html {
   // overflow-x: hidden;
 }
 
+body {
+  overflow-x: hidden;
+}
 h2 {
   margin: 0 0 20px 0;
   font-weight: 700;
@@ -192,6 +195,7 @@ a:focus {
     margin: 10px 15px;
     background: none;
     box-shadow: none;
+    outline: none;
     &:hover {
       color: #fff!important;
       transform: scale(1.1);
@@ -382,7 +386,7 @@ header .intro-text {
 #restaurant-menu {
   padding: 0 0 60px 0;
   .section-title {
-    background: #444 url(../img/menu-bg.jpg) center center no-repeat fixed;
+    background: #444 url(../img/Mexico-prilohy2.jpg) center center no-repeat fixed;
     background-size: cover;
     h2 {
       color: $yellow-font;
@@ -453,7 +457,7 @@ header .intro-text {
 #portfolio {
   padding: 0 0 120px 0;
   .section-title {
-    background: #444 url(../img/gallery-bg.jpg) center center no-repeat fixed;
+    background: #444 url(../img/Mexico-pult-na-sedenie.jpg) center center no-repeat fixed;
     background-size: cover;
     margin-bottom: 50px;
     hr{
@@ -472,6 +476,16 @@ header .intro-text {
 .categories {
   padding-bottom: 30px;
   text-align: center;
+
+  @media(max-width:576px){
+    ul {
+      max-width: 100%;
+      margin: 0;
+      ol {
+        margin: 0;
+      }
+    }
+  }
 }
 
 ul.cat li {
@@ -536,12 +550,20 @@ ol.type li {
   -webkit-transition-property: height, width;
   -moz-transition-property: height, width;
   transition-property: height, width;
+  @media(max-width: 576px) {
+    margin: auto;
+  }
   .isotope-item {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     -webkit-transition-property: -webkit-transform, opacity;
     -moz-transition-property: -moz-transform, opacity;
     transition-property: transform, opacity;
+
+    @media(max-width: 576px) {
+      width: 100%!important;
+      margin: auto;
+    }
   }
 }
 .portfolio-items{
@@ -560,9 +582,15 @@ ol.type li {
         left: 6px;
         border: 1px solid rgba(255, 255, 255, 0.6);
       }
+
+      a {
+        display: block;
+      }
       img{
         // max-width: inherit;
-        // width: 100%;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
       }
     }
   }
@@ -612,11 +640,11 @@ ol.type li {
 
 #team {
   color: #fff;
-  background: #444 url(../img/team-bg.jpg) center top no-repeat fixed;
+  background: #444 url(../img/Mexico-pult-original.jpg) center top no-repeat fixed;
   background-size: cover;
   .overlay {
     padding: 120px 0 80px 0;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.7);
   }
   h2, p {
     color: $yellow-font;
@@ -633,6 +661,8 @@ ol.type li {
   }
   img {
     width: 280px;
+    height: 280px;
+    object-fit: cover;
   }
   .thumbnail {
     background: transparent;
@@ -726,7 +756,7 @@ ol.type li {
   background: #f6f6f6;
   padding: 0 0 60px;
   .section-title{
-    background:  #444 url('../img/gallery-bg.jpg') 50% no-repeat fixed;
+    background:  #444 url('../img/Mexico-prevadzka-posedenie.jpg') 50% no-repeat fixed;
     h2{
       color: $yellow-font;
     }

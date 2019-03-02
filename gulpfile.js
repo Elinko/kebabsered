@@ -24,7 +24,7 @@ gulp.task('sass', () => gulp
 
 gulp.task('babel', () => gulp
 // .src(['./src/js/jquery.js', './src/js/bootstrap.min.js',  './src/js/SmoothScroll.js','./src/js/nivo-lightbox.js' ,'./src/js/jquery.isotope.js', './src/js/jqBootstrapValidation.js','./src/js/contact_me.js', './src/js/main.js'])
-    .src(['./src/js/SmoothScroll.js','./src/js/nivo-lightbox.js' ,'./src/js/jquery.isotope.js','./src/js/main.js'])
+    .src(['./src/js/jquery.js', './src/js/bootstrap.min.js','./src/js/SmoothScroll.js','./src/js/nivo-lightbox.js' ,'./src/js/jquery.isotope.js','./src/js/main.js'])
     .pipe(concat('main.js'))
     .pipe(babel({
         presets: ['es2015'],

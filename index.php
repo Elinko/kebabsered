@@ -20,7 +20,7 @@ if( have_posts() ) {
 	}
 }
 
-$menu_desc = get_field('menu-desc');
+$menu_desc = get_field('menu_desc');
 $galeria_popis = get_field('galeria_popis');
 $kolegovia_nadpis = get_field('kolegovia_nadpis');
 $kolegovia_popis = get_field('kolegovia_popis');
@@ -235,11 +235,13 @@ $donaska_text = get_field('donaska_text');
 			    <div class="">
 			      <div class="portfolio-items row">
 							<?php
+								 $tabs = 0;
 								 while ( $loop->have_posts() ) : $loop->the_post();
+
 							 		$images = get_field('galeria');
 								 	for ($i=0; $i < sizeOf($images); $i++) {
 										 // var_dump($images[$i]);
-										 echo'<div class="col-12 col-sm-6 col-md-4 col-lg-4 tab'.$i.'">
+										 echo'<div class="col-12 col-sm-6 col-md-4 col-lg-4 tab'.$tabs.'">
 													 <div class="portfolio-item">
 														 <div class="hover-bg">
 														 	<a href="'.$images[$i]['sizes']['large'].'" data-lightbox-gallery="gallery1">';
@@ -252,12 +254,13 @@ $donaska_text = get_field('donaska_text');
 													 </div>
 												 </div>';
 								 	}
+									$tabs = $tabs +1;
 								 endwhile;
 
 								 wp_reset_postdata();
 							?>
 
-			        <div class="col-sm-6 col-md-4 col-lg-4 breakfast">
+			        <!-- <div class="col-sm-6 col-md-4 col-lg-4 breakfast">
 			          <div class="portfolio-item">
 			            <div class="hover-bg">
 										<a href="img/portfolio/01-large.jpg" title="Dish Name" data-lightbox-gallery="gallery1">
@@ -268,7 +271,7 @@ $donaska_text = get_field('donaska_text');
 										</a>
 									</div>
 			          </div>
-			        </div>
+			        </div> -->
 
 			      </div>
 			    </div>
