@@ -28,7 +28,7 @@
 <link rel="shortcut icon" href="<?php bloginfo('stylesheet_directory');?>/dist/img/favicon.png" type="image/x-icon">
 
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory');?>/dist/fontawesome//css/all.css">
-<link rel="stylesheet" type="text/css"  href="<?php bloginfo('stylesheet_directory');?>/dist/css/style.css?v1.11">
+<link rel="stylesheet" type="text/css"  href="<?php bloginfo('stylesheet_directory');?>/dist/css/style.css?v1.15">
 <link rel="stylesheet" type="text/css"  href="<?php bloginfo('stylesheet_directory');?>/dist/css/motion.min.css">
 
 <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700" rel="stylesheet">

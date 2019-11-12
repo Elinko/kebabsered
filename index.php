@@ -86,7 +86,7 @@ $donaska_text = get_field('donaska_text');
 												echo'</div>';
 												echo'<div class="menu-item-price">';
 													the_field('cena');
-												echo'</div>';
+												echo'&nbsp;€</div>';
 												echo'<div class="menu-item-description">';
 													the_field('popis');
 												echo'</div>';
@@ -94,6 +94,27 @@ $donaska_text = get_field('donaska_text');
 									}
 								 ?>
 
+			        </div>
+							<div class="menu-section">
+			          <h2 class="menu-section-title">Zapekačky</h2>
+			          <hr class="myhr">
+								<?php
+									$zapekacky = new WP_query(array('post_type' => 'zapekacky', 'orderby' => 'post_id', 'order' => 'ASC'));
+									while($zapekacky->have_posts()){
+											$zapekacky->the_post();
+											echo'<div class="menu-item">';
+												echo'<div class="menu-item-name">';
+													the_field('nazov');
+												echo'</div>';
+												echo'<div class="menu-item-price">';
+													the_field('cena');
+												echo'&nbsp;€</div>';
+												echo'<div class="menu-item-description">';
+													the_field('popis');
+												echo'</div>';
+											echo'</div>';
+									}
+								 ?>
 			        </div>
 			      </div>
 			      <div class="col-xs-12 col-sm-6">
@@ -110,7 +131,7 @@ $donaska_text = get_field('donaska_text');
 												echo'</div>';
 												echo'<div class="menu-item-price">';
 													the_field('cena');
-												echo'</div>';
+												echo'&nbsp;€</div>';
 												echo'<div class="menu-item-description">';
 													the_field('popis');
 												echo'</div>';
@@ -118,31 +139,6 @@ $donaska_text = get_field('donaska_text');
 									}
 								 ?>
 
-			        </div>
-			      </div>
-			    </div>
-			    <div class="row">
-			      <div class="col-xs-12 col-sm-6">
-			        <div class="menu-section">
-			          <h2 class="menu-section-title">Zapekačky</h2>
-			          <hr class="myhr">
-								<?php
-									$zapekacky = new WP_query(array('post_type' => 'zapekacky', 'orderby' => 'post_id', 'order' => 'ASC'));
-									while($zapekacky->have_posts()){
-											$zapekacky->the_post();
-											echo'<div class="menu-item">';
-												echo'<div class="menu-item-name">';
-													the_field('nazov');
-												echo'</div>';
-												echo'<div class="menu-item-price">';
-													the_field('cena');
-												echo'</div>';
-												echo'<div class="menu-item-description">';
-													the_field('popis');
-												echo'</div>';
-											echo'</div>';
-									}
-								 ?>
 			        </div>
 			      </div>
 			      <div class="col-xs-12 col-sm-6">
@@ -159,7 +155,7 @@ $donaska_text = get_field('donaska_text');
 												echo'</div>';
 												echo'<div class="menu-item-price">';
 													the_field('cena');
-												echo'</div>';
+												echo'&nbsp;€</div>';
 												echo'<div class="menu-item-description">';
 													the_field('popis');
 												echo'</div>';
@@ -180,7 +176,7 @@ $donaska_text = get_field('donaska_text');
 												echo'</div>';
 												echo'<div class="menu-item-price">';
 													the_field('cena');
-												echo'</div>';
+												echo'&nbsp;€</div>';
 												echo'<div class="menu-item-description">';
 													the_field('popis');
 												echo'</div>';
@@ -290,7 +286,7 @@ $donaska_text = get_field('donaska_text');
 
 			      </div>
 			      <div id="row">
-			        <div class="col-md-4 team">
+			        <div class="col-md-4 offset-2 team">
 			          <div class="thumbnail">
 			            <div class="team-img"><img src="<?php echo $kolega1['url']; ?>" alt="<?php echo $kolega1_meno; ?>"></div>
 			            <div class="caption">
@@ -308,7 +304,7 @@ $donaska_text = get_field('donaska_text');
 			            </div>
 			          </div>
 			        </div>
-			        <div class="col-md-4 team">
+			        <!-- <div class="col-md-4 team">
 			          <div class="thumbnail">
 									<div class="team-img"><img src="<?php echo $kolega3['url']; ?>" alt="<?php echo $kolega3_meno; ?>"></div>
 			            <div class="caption">
@@ -316,7 +312,7 @@ $donaska_text = get_field('donaska_text');
 			              <p><?php echo $kolega3_popis; ?></p>
 			            </div>
 			          </div>
-			        </div>
+			        </div> -->
 			      </div>
 			    </div>
 			  </div>
