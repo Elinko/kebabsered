@@ -11,7 +11,7 @@
 
 ?>
 <!doctype html>
-<html <?php language_attributes(); ?>>
+<html style="margin-top:0!important;" <?php language_attributes(); ?>>
 <head>
 <meta charset="UTF-8">
 <meta name="description" content="Kebab Sereď, v Mexico je najlepší kebab, bagety a zapekačky v Seredi.">
