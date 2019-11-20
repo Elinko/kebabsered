@@ -304,7 +304,7 @@ $donaska_text = get_field('donaska_text');
 			            </div>
 			          </div>
 			        </div>
-			        <!-- <div class="col-md-4 team">
+			        <div class="col-md-4 team">
 			          <div class="thumbnail">
 									<div class="team-img"><img src="<?php echo $kolega3['url']; ?>" alt="<?php echo $kolega3_meno; ?>"></div>
 			            <div class="caption">
@@ -312,7 +312,7 @@ $donaska_text = get_field('donaska_text');
 			              <p><?php echo $kolega3_popis; ?></p>
 			            </div>
 			          </div>
-			        </div> -->
+			        </div>
 			      </div>
 			    </div>
 			  </div>
